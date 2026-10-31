@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Drives</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f4f6f9;
+    }
+
+    h1 {
+        color: #1e3a8a;
+    }
+
+    h2 {
+        color: #2563eb;
+    }
+
+    button {
+        background-color: #2563eb;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #1e40af;
+    }
+</style>
+</head>
+<body>
+
+    <h1>Available Placement Drives</h1>
+
+    {% for drive in drives %}
+        <h2>{{ drive.company.company_name }}</h2>
+        <p>Location: {{ drive.Company.location }}</p>
+<p>Website: {{ drive.Company.website }}</p>
+
+        <p>Job Role: {{ drive.job_role }}</p>
+        <p>Package: {{ drive.package_lpa }} LPA</p>
+        <p>Minimum CGPA: {{ drive.minimum_cgpa }}</p>
+        <p>Deadline: {{ drive.deadline }}</p>
+        <form method="POST" action="{%url 'apply_drive' drive.drive_id%}">
+            {% csrf_token %}
+            <button type="submit">Apply Now</button>
+        </form>
+
+        <hr>
+    {% empty %}
+        <p>No placement drives available.</p>
+    {% endfor %}
+
+    <a href="{% url 'home' %}">Back to Home</a>
+
+</body>
+</html>

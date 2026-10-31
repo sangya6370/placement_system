@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Status</title>
+</head>
+<body>
+
+    <h1>My Application Status</h1>
+
+    {% for application in applications %}
+        <h3>Company: {{ application.drive.Company.company_name }}</h3>
+<p>Job Role: {{ application.drive.job_role }}</p>
+<p>Application Date: {{ application.application_date }}</p>
+<p>Status: {{ application.status }}</p>
+        <hr>
+    {% empty %}
+        <p>You have not applied for any placement drives yet.</p>
+    {% endfor %}
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

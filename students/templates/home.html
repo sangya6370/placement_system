@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement System</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        text-align: center;
+        padding: 40px;
+    }
+
+    h1 {
+        color: #1e3a8a;
+        margin-bottom: 30px;
+    }
+
+    a {
+        display: inline-block;
+        background-color: #2563eb;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        margin: 10px;
+        border-radius: 6px;
+    }
+
+    a:hover {
+        background-color: #1e40af;
+    }
+</style>
+</head>
+
+<body>
+
+    <h1>College Placement Management System</h1>
+
+    <h2>Registration Successful!</h2>
+
+    <a href="{% url 'register' %}">Register Another Student</a>
+<br><br>
+<a href="/drives/">View Placement Drives</a>
+</body>
+</html>
